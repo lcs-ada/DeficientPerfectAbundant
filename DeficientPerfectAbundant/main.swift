@@ -8,10 +8,26 @@
 
 import Foundation
 
-// Get the user input
-var rawInput = readLine()
+//INPUT
+let n = 24
 
-// Print out the input provided
-print("You said:")
-print(rawInput)
+//PROCESS
+var sum = 1
+//  Check all numbers from 2 to halfway for n
+for i in 2...n/2 {
+    print(i)
+    //Is i a divisor of n?
+    if n % i == 0 {
+        //i is a divisor so add to the sum
+        sum += i
+    }
+}
 
+//OUTPUT
+if sum > n {   
+    print("\(n) is an abundant number.")
+} else if sum < n {
+    print("\(n) is a deficient number.")
+} else if sum == n {
+    print("\(n) is a perfect number.")
+}
